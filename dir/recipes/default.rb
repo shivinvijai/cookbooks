@@ -6,7 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-directory '/opt/shivin/shloka' do
+directory '/opt/dir1/dir2' do
   owner 'root'
   group 'root'
   mode '0755'
