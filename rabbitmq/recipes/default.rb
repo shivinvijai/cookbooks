@@ -19,18 +19,30 @@ service 'rabbitmq-server' do
   action :start
 end
 
+# Creating a rabbitmq user. Defined 'rabbitmq_user' in resources folder
 
 rabbitmq_user "shivin" do
   password "sekretpass"
   action :add
 end
 
+# Creating a rabbitmq virtual host. Defined 'rabbitmq_vhost' in resources folder
+
 rabbitmq_vhost "/shivin" do
   action :add
 end
+
+# Granding permissions for the user to vhost
 
 rabbitmq_user "shivin" do
   vhost "/shivin"
   permissions ".* .* .*"
   action :set_permissions
+end
+
+# Installing web console management UI.
+
+package 'rabbitmq-server-plugins' do
+    action :install
+    version node['rabbitmq']['version']
 end
