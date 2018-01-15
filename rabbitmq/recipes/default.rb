@@ -44,5 +44,4 @@ end
 
 package 'rabbitmq-server-plugins' do
     action :install
-    version node['rabbitmq']['version']
 end
