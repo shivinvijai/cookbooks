@@ -19,3 +19,18 @@ service 'rabbitmq-server' do
   action :start
 end
 
+
+rabbitmq_user "shivin" do
+  password "sekretpass"
+  action :add
+end
+
+rabbitmq_vhost "/shivin" do
+  action :add
+end
+
+rabbitmq_user "shivin" do
+  vhost "/shivin"
+  permissions ".* .* .*"
+  action :set_permissions
+end
