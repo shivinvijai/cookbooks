@@ -21,7 +21,7 @@ end
 
 # Creating a rabbitmq user. Defined 'rabbitmq_user' in resources folder
 
-rabbitmq_user "shivin" do
+rabbitmq_user 'shivin' do
   password "sekretpass"
   action :add
 end
