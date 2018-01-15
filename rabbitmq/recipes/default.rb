@@ -60,7 +60,7 @@ when "redhat", "centos", "scientific"
   end
 end
 
-if node[:rabbitmq][:cluster]
+if node[:demo1][:cluster]
     # If this already exists, don't do anything
     # Changing the cookie will stil have to be a manual process
     template "/var/lib/rabbitmq/.erlang.cookie" do
