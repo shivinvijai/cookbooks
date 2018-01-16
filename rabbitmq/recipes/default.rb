@@ -23,6 +23,8 @@
 # while still using /etc/init.d/rabbitmq-server start
 # because of this we just put the rabbitmq-env.conf in place and let it rip
 
+instance_name = node['hostname']
+
 directory "/etc/rabbitmq/" do
   owner "root"
   group "root"
@@ -60,7 +62,7 @@ when "redhat", "centos", "scientific"
   end
 end
 
-if node[:demo1][:cluster]
+#if node[:demo1][:cluster]
     # If this already exists, don't do anything
     # Changing the cookie will stil have to be a manual process
     template "/var/lib/rabbitmq/.erlang.cookie" do
