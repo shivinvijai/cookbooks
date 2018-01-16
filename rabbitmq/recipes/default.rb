@@ -72,7 +72,7 @@ end
       mode 0400
       not_if { File.exists? "/var/lib/rabbitmq/.erlang.cookie" }
     end
-end
+#end
 
 template "/etc/rabbitmq/rabbitmq.config" do
   source "rabbitmq.config.erb"
