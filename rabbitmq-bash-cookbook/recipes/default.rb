@@ -20,6 +20,7 @@ end
 package 'rabbitmq-server-install' do
   package_name 'rabbitmq-server'
   package_name 'erlang'
+  package_name 'erlang-nox'
 end
 
 
