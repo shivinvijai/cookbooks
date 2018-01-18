@@ -23,4 +23,15 @@ package 'rabbitmq-server-install' do
   package_name 'erlang-nox'
 end
 
+bash 'create_users' do
+  user 'root'
+  cwd '/tmp'
+  code <<-EOH
+  sudo update-rc.d rabbitmq-server defaults
+  sudo rabbitmqctl add_user admin password
+  sudo rabbitmqctl set_user_tags admin administrator
+  sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
+  sudo rabbitmq-plugins enable rabbitmq_management
+  EOH
+end
 
