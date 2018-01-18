@@ -17,4 +17,8 @@ bash 'install_rabbitmq_key' do
   EOH
 end
 
+package 'rabbitmq-server-install' do
+  package_name 'rabbitmq-server'
+end
+
 
