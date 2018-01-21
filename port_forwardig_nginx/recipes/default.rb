@@ -13,6 +13,7 @@ end
 service 'nginx' do
   supports status: true, restart: true, reload: true
   action :enable
+  subscribes :reload, 'file[/etc/nginx/sites-available/port_forward.conf]', :immediately
 end
 
 cookbook_file '/usr/share/nginx/html/shivin.html' do
