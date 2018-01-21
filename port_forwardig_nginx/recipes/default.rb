@@ -20,3 +20,8 @@ cookbook_file '/usr/share/nginx/html/shivin.html' do
   action :create_if_missing
 end
 
+cookbook_file '/etc/nginx/sites-available/port_forward.conf' do
+  source 'port_forward.conf'
+  action :create_if_missing
+end
+
