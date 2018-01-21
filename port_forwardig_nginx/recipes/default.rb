@@ -15,4 +15,8 @@ service 'nginx' do
   action :enable
 end
 
+cookbook_file '/usr/share/nginx/html/shivin.html' do
+  source 'shivin.html'
+  action :create
+end
 
