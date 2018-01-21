@@ -17,6 +17,6 @@ end
 
 cookbook_file '/usr/share/nginx/html/shivin.html' do
   source 'shivin.html'
-  action :create
+  action :create_if_missing
 end
 
