@@ -23,7 +23,7 @@ end
 # Install the mod_php5 Apache module.
 package 'php5' do
   action :install
-  notifies :restart, 'nginx', :immediately
+  #notifies :restart, 'nginx', :immediately
 end
 
 # Install php5-mysql.
