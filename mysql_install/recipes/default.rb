@@ -18,7 +18,7 @@ package 'mysql' do
   action :install
 end
 
-template "/etc/mysql/my.cnf" do
+template "/etc/my.cnf" do
   owner 'root'
   group 'root'
   mode 0644
