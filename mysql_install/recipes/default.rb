@@ -10,7 +10,7 @@ package 'mysql-server' do
   action :install
 end
 
-package 'libmysqlclient15-dev' do
+package 'mysql-devel' do
   action :install
 end
 
