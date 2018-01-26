@@ -14,7 +14,7 @@ package 'mysql-devel' do
   action :install
 end
 
-package 'mysql-client' do
+package 'mysql' do
   action :install
 end
 
