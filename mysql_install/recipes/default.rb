@@ -10,14 +10,6 @@ package 'mysql-server' do
   action :install
 end
 
-package 'mysql-devel' do
-  action :install
-end
-
-package 'mysql' do
-  action :install
-end
-
 template "/etc/my.cnf" do
   owner 'root'
   group 'root'
