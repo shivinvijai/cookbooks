@@ -8,8 +8,8 @@
 #
 
 # Install the mod_php5 Apache module.
-httpd_module 'php5' do
-  instance 'default'
+package 'php5' do
+  action :install
 end
 
 # Install php5-mysql.
