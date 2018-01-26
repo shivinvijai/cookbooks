@@ -17,7 +17,7 @@ template "/etc/my.cnf" do
   source "my.conf.erb"
 end
 
-service "mysqld" do
+service "mysql" do
   supports :status => true, :restart => true, :reload => true
   action :enable
 end
