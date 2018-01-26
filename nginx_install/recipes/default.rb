@@ -13,10 +13,9 @@ end
 service 'nginx' do
   supports status: true, restart: true, reload: true
   action [ :enable, :start ]
-  #subscribes :reload, 'file[/etc/nginx/sites-available/port_forward.conf]', :immediately
 end
 
-cookbook_file '/usr/share/nginx/html/shivin.html' do
+cookbook_file '/usr/share/nginx/html/index.html' do
   source 'index.html'
   action :create
 end
