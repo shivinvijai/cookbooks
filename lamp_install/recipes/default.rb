@@ -41,6 +41,10 @@ cookbook_file '/etc/nginx/sites-available/default' do
   action :create
 end
 
+service 'nginx' do
+	action :restart
+end
+
 package 'mysql-server' do
   action :install
 end
