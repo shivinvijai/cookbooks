@@ -36,6 +36,11 @@ cookbook_file '/usr/share/nginx/html/phpinfo.php' do
   action :create
 end
 
+cookbook_file '/etc/nginx/sites-available/default' do
+  source 'default'
+  action :create
+end
+
 package 'mysql-server' do
   action :install
 end
