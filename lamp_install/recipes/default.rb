@@ -26,9 +26,19 @@ package 'php5' do
   #notifies :restart, 'nginx', :immediately
 end
 
+package 'php5-fpm' do
+  action :install
+  #notifies :restart, 'nginx', :immediately
+end
+
 # Install php5-mysql.
 package 'php5-mysql' do
   action :install
+end
+
+cookbook_file '/etc/php5/fpm/php.ini' do
+  source 'php.ini'
+  action :create
 end
 
 cookbook_file '/usr/share/nginx/html/phpinfo.php' do
