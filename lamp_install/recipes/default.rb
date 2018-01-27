@@ -31,6 +31,11 @@ package 'php5-mysql' do
   action :install
 end
 
+cookbook_file '/usr/share/nginx/html/phpinfo.php' do
+  source 'phpinfo.php'
+  action :create
+end
+
 package 'mysql-server' do
   action :install
 end
