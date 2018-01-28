@@ -59,13 +59,6 @@ package 'mysql-server' do
   action :install
 end
 
-mysql_service 'mysql-server' do
-	bind_address '127.0.0.1'
-  	port '3306'
-  	initial_root_password 'change me'
-  	action [:create, :start]
-end
-
 template "/etc/my.cnf" do
   owner 'root'
   group 'root'
