@@ -73,6 +73,7 @@ template "/etc/my.cnf" do
 end
 
 service "mysql" do
+  provider Chef::Provider::Service::Init
   supports :status => true, :restart => true, :reload => true
   action :enable
 end
