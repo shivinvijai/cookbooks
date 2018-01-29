@@ -59,13 +59,7 @@ package 'mysql-server' do
   action :install
 end
 
- mysql_service 'default' do                                          
-  port '3306'
-  initial_root_password 'test'
-  action :create
-end
-
-template "/etc/my.cnf" do
+ template "/etc/my.cnf" do
   owner 'root'
   group 'root'
   mode 0644
@@ -73,7 +67,6 @@ template "/etc/my.cnf" do
 end
 
 service "mysql" do
-  provider Chef::Provider::Service::Init
   supports :status => true, :restart => true, :reload => true
   action :enable
 end
